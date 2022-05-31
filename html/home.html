@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Charalambos Georgiades">
+    <meta name="description" content="Home page of website">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a id="homePageNavLink" href="#" onclick="changeToHomePage()">Home</a></li>
+            <li><a id="aboutMeNavLink" href="#" onclick="changeToAboutMePage()">About Me</a></li>
+            <li><a id="myWorkNavLink" href="#" onclick="changeToMyWorkPage()">My Work</a></li>
+            <li><a id="servicesNavLink" href="#" onclick="changeToServicesPage()">Services</a></li>
+            <li><a id="contactMeNavLink" href="#" onclick="changeToContactMe()">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
+        
+        <div id="homePage" class="page">
+            
+            <div id="homePageText">
+
+                <h1>Welcome to my Website</h1>
+
+                <p>  
+                    <br>
+                </p>
+
+            </div>
+            
+            <a class="arrowToNextPageHome" href="#" onclick="changeToAboutMePage()"><img src="../images/arrow.png" alt="Next page"></a>
+
+        </div>
+
+        <div id="aboutMePage" class="page">
+            <div id = "aboutMeText">
+
+                <h1>About Me</h1>
+
+                <p>My name is Charalambos Georgiades and this is my website. I am currently working towards a bachelors degree in computer science at the University of Sheffield. 
+                    <br>
+                    <a class="learnMoreHyperlink" href="aboutMe.html">Learn more➝</a>
+                </p>
+
+            </div>
+            
+           <a class="arrowToNextPage" href="#" onclick="changeToMyWorkPage()"><img src="../images/arrow.png" alt="Next page"></a> 
+        
+        </div>
+
+        <div id="myWorkPage" class="page">
+
+            <div id="myWorkText">
+
+                <h1>My Work</h1>
+
+                <p>During my time at university, I have worked on a variety of projects in various programming languages, ranging from ruby and java, to HTML and python.  
+                    <br>
+                    <a class="learnMoreHyperlink" href="myWork.html">Learn more➝</a>
+                </p>
+
+            </div>
+
+            <a class="arrowToNextPage" href="#" onclick="changeToServicesPage()"><img src="../images/arrow.png" alt="Next page"></a>
+
+        </div>
+
+        <div id="servicesPage" class="page">
+
+            <div id="servicesText">
+
+                <h1>My Services</h1>
+
+                <p>As a second year student, I am currently searching for a summer internship to gain some valuable real-life experience and enchance my skillset.
+                    <br>
+                    <a class="learnMoreHyperlink" href="services.html">Learn more➝</a>
+                </p>
+
+            </div>
+  
+            <a class="arrowToNextPage" href="#" onclick="changeToContactMe()"><img src="../images/arrow.png" alt="Next page"></a>
+
+        </div>
+
+        <div id="contactMePage" class="page">
+            <div id="contactMeText">
+
+                <h1 class="contactMeTitle">Contact Me</h1>
+
+                <form class="form" action="mailto:contact@yourdomain.com" method="POST" enctype="multipart/form-data"  name="EmailForm">
+
+                 <div class="formwrap">
+                    <p>
+                        <label class="labels" for="ContactName">Name:</label><br>
+
+                        <input class="textField" type="text" size="19" name="ContactName" placeholder="Name... " maxlength="70" size="30" required><br><br>
+                    </p>
+                        
+                    <p>
+                        <label for="EmailAddress">Email Address:</label><br>
+
+                        <input class="textField" type="email" size="19" name="EmailAddress" placeholder="Email address... " maxlength="70" size="30" required>
+                    </p>
+
+                    <p>
+                        <label for="ContactComment">Message:</label><br>
+                        
+                        <textarea name="ContactComment" rows="6" cols="20"></textarea>
+                    </p>
+
+                    <p>
+                        <input type="submit" name="submit" class="button" value="Submit">
+                        
+                        <input type="reset" class="button">
+                    </p>
+                    
+                 </div>
+                    
+                </form>
+
+            </div>
+
+        </div>
+
+        <div id="loading"></div>
+
+        <script src="../javascript/transitions.js"></script>
+
+    </main>
+
+</body>
+
+</html>

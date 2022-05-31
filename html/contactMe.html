@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Charalambos Georgiades">
+    <meta name="description" content="Contact me page of website">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+    
+    <nav>
+        <ul>
+            <li><a class="differentPage" href="home.html">Home</a></li>
+            <li><a class="differentPage" href="aboutMe.html">About Me</a></li>
+            <li><a class="differentPage" href="myWork.html">My Work</a></li>
+            <li><a class="differentPage" href="services.html">Services</a></li>
+            <li><a class="currentPage" href="#">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <main id="main" class="mmm">
+        <h1 class="contactMeTitle">Contact Me</h1>
+
+                <form class="form" action="mailto:contact@yourdomain.com" method="POST" enctype="multipart/form-data"  name="EmailForm">
+
+                 <div class="formwrap">
+                    <p>
+                        <label class="labels" for="ContactName">Name:</label><br>
+
+                        <input class="textField" type="text" size="19" name="ContactName" placeholder="Name... " maxlength="70" size="30" required><br><br>
+                    </p>
+                        
+                    <p>
+                        <label for="EmailAddress">Email Address:</label><br>
+
+                        <input class="textField" type="email" size="19" name="EmailAddress" placeholder="Email address... " maxlength="70" size="30" required>
+                    </p>
+
+                    <p>
+                        <label for="ContactComment">Message:</label><br>
+                        
+                        <textarea name="ContactComment" rows="6" cols="20"></textarea>
+                    </p>
+
+                    <p>
+                        <input type="submit" name="submit" class="button" value="Submit">
+                        
+                        <input type="reset" class="button">
+                    </p>
+       <div id="loading"></div>
+
+       <script src="../javascript/transisionForSpecPage.js"></script>
+
+    </main>
+
+</body>
+
+</html>
