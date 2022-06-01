@@ -52,9 +52,9 @@ li a:hover {
 
 /*breathing effect on background image*/
 @keyframes breath {
-    0%   { background-size: 100% auto; }
-    50% { background-size: 140% auto; }
-    100% { background-size: 100% auto; }
+    0%   { background-size: 100% 100%; }
+    50% { background-size: 110% 110%;   }
+    100% { background-size: 100% 100%;  }
 }
 
 @keyframes slideOut {
@@ -91,18 +91,19 @@ main{
 }
 
 .page{
-
-    display: none;
+    transform: scale(1.0);
     overflow-y: hidden;
     height: 100%;
-    width: 100%;
-    background: url("../images/pic.jpg"); /* Must be portait mode to work on all devices*/
-    animation: breath 20s linear infinite;
-    text-align: center;
-    background-position: center;
+    width:100%;
+    background-image: url("../images/pic.jpg");
+    animation: breath 20s linear infinite;  
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
+    text-align: center; 
 }
+
 
 main h1{
     margin-top: 300px;
@@ -211,15 +212,17 @@ form{
 }
 
 .arrowToNextPageHome{
-    visibility: hidden;
+    visibility: visible;
+    background-color: aqua;
 }
 
 .arrowToNextPageHome img{
     visibility: visible;
+    position: fixed;
     height: 50px;
     width: auto;
-    margin-top: 23%;
-    margin-left: 77%;
+    right: 10%;  /* nav bar widht*/
+    bottom: 0;
     cursor: pointer;
 
     /* Make element unselectable */
