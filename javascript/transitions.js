@@ -64,6 +64,8 @@ document.getElementById("servicesNavLink").addEventListener('mouseleave', () => 
 document.getElementById("contactMeNavLink").addEventListener('mouseenter', () => document.getElementById("contactMeNavLink").style.color = 'red');
 document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
 
+window.onscroll = function() {changeToAboutMePage()};
+
 //loading screen
 onReady(function () {
     show('main', true);
