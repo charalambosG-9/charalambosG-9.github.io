@@ -5,6 +5,10 @@
     list-style: none;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 *::selection { /* WebKit/Blink Browsers */
     background: rgb(252, 97, 97); 
     color: white;
@@ -22,72 +26,34 @@ body{
 }
 
 nav{
-    width: 10%;
-    background-color: black;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    width: none;/* Enable scrolling if the sidenav has too much content */
 }
 
-ul {
-    display: block;
-    margin-top: 300px;
-    padding: 50% 2em;
+ul{
+    display: none;
 }
   
 li a{
-    display: block;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    cursor: pointer;
+    display: none;
 }
   
-  /* Change the link color on hover */
-li a:hover {
-    color: red;
-}
-
-/*breathing effect on background image*/
-@keyframes breath {
-    0%   { background-size: 100% 100%; }
-    50% { background-size: 110% 110%;   }
-    100% { background-size: 100% 100%;  }
-}
-
-@keyframes slideOut {
-    0%   { height: 100%; }
-    50% { height: 50%; }
-    75% { height: 15%; }
-    100% { height: 0%; }
-}
-
-@keyframes fadeOut {
-    0%   { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 0; }
-}
-
-@keyframes slideIn {
-    0%   { height: 0%; }
-    50% { height: 50%; }
-    75% { height: 85%; }
-    100% { height: 100%; }
-}
-
-@keyframes fadeIn {
-    0%   { opacity: 0; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
-}
 
 main{
-    position: fixed;
+    position: absolute;
     height: 100%;
     width: 100%;
-    margin-left: 10%;
+}
+
+main h1{
+    margin-top: 10%;
+    font-size: 5vw;
+    font-weight: bold;
+}
+
+.page p{
+    padding-left: 40%;
+    padding-right: 40%;
+    font-size: 2vmax;
 }
 
 .page{
@@ -95,7 +61,7 @@ main{
     overflow-y: hidden;
     height: 100%;
     width:100%;
-    background-image: url("../images/pic.jpg");
+    background-image: url("http://wallpapercave.com/wp/LXR5gFx.png");
     animation: breath 20s linear infinite;  
     background-repeat: no-repeat; 
     background-position: center center; 
@@ -104,18 +70,222 @@ main{
     text-align: center; 
 }
 
+.specPage{ 
+    z-index: -1000;
+    position: fixed;
+    overflow-x:hidden;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.712);
+    padding: 0;
+    color:white;
+    text-align: center;
+}
 
-main h1{
-    margin-top: 300px;
-    font-size: 100px;
+.mainTitle{
+    margin-top: 1.5em;
+    font-size: 5vw;
     font-weight: bold;
+    text-align: center;
 }
 
-main p{
-    padding-left: 40%;
-    padding-right: 40%;
-    font-size: 22px;
+.mainParagraph{
+    margin: 0 20%;
+    text-align: center;
+    font-size: 2vmax;
 }
+
+.summaryParagraph{
+    padding: 0 20%;
+    font-size: 2vmax;
+}
+
+.paragraphHeader{
+    font-size: 3vmax;
+    margin-top: 1em;
+}
+
+.detailsSection{
+    float: left;
+    margin: 0 5% 0 18%;
+    width: 25%;
+}
+
+.detailsSection h1{
+    font-size: 3vmax;
+    margin: 0.5em 0;
+}
+
+.detailsSection p{
+    all:revert;
+    font-size: 2vmax;
+}
+
+.detailsInfo{
+    all:revert;
+    margin:0;
+    padding:0;
+}
+
+.detailsInfo strong{
+    color: rgba(0, 0, 0, 0.63);
+    font-size: 1.5vmax;
+    position: relative;
+    right:15px;
+}
+
+.detailsInfo span{
+    color:rgba(0, 4, 7, 0.582);
+    font-size: 1.5vmax;
+    position: relative;
+    right:15px;
+}
+
+.detailsInfo li{
+    margin-bottom: 1em;
+}
+
+.skillsSection{
+    float:left;
+    margin: 0 5% 0 7%;
+    width:25%;
+}
+
+.skillsSection h1{
+    font-size: 3vmax;
+    margin: 0.5em 0;
+}
+
+.skillsSection p{
+    all:revert;
+    font-size: 2vmax;
+}
+
+.skillsSection ul{
+    all:revert;
+    margin: 0;
+    padding: 0;
+}
+
+.skillsSection li{
+    margin: 0 0 1em 0;
+    font-size: 1.5em;
+}
+
+.aboutMeButtons{
+    width: 100%;
+}
+
+/*Buttons in about me page*/
+.aboutMeButtonStyle1, .aboutMeButtonStyle2{
+    all: revert;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    background-color: #11ABB0;
+    display: block;
+}
+
+
+.aboutMeButtonStyle1{  
+    margin-left:15%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    padding: 1em;
+    width:70%;
+    float:left;
+}
+
+.aboutMeButtonStyle2{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    padding:1em;
+    width:70%;
+    float:left;
+}
+
+.tempForTroubleshooting{
+    float: left;
+    visibility: hidden;
+    margin-top: -5%;
+    width:100%
+}
+
+.aboutMeButtonStyle1:hover{
+    background-color: rgb(41, 41, 39);
+    transition: 300ms;
+}
+
+.aboutMeButtonStyle2:hover{
+    background-color: rgb(41, 41, 39);
+    transition: 300ms;
+}
+
+@media screen and (min-width:950px){
+
+    nav{
+        width: 10%;
+        background-color: black;
+        height: 100%; /* Full height */
+        position: fixed; /* Make it stick, even on scroll */
+        overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    }
+    
+    ul {
+        display: block;
+        position: relative;
+        top: 30%;
+        padding: 50% 0;
+    }
+      
+    li a{
+        display: block;
+        padding: 5% 20%;
+        font-size: 1rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+    }
+      
+      /* Change the link color on hover */
+    li a:hover {
+        color: red;
+    }
+
+    main{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin-left: 10%;
+    }
+
+    .detailsInfo strong{
+        right:0px;
+    }
+
+    .detailsInfo span{
+        right:0px;
+    }
+
+    .aboutMeButtonStyle1{     
+        margin-left:37%;
+        margin-right:0%;
+        padding: 25px;
+        width:100px;
+        float:left;
+    }
+    
+    .aboutMeButtonStyle2{
+        margin-left: 10%;
+        margin-right:0%;
+        padding: 25px;
+        width:100px;
+        float:left;
+    } 
+
+}
+
 
 .contactMeTitle{
     margin-top: 100px;
@@ -211,39 +381,17 @@ form{
     color:blue;
 }
 
-.arrowToNextPageHome{
-    visibility: visible;
-    background-color: aqua;
-}
-
-.arrowToNextPageHome img{
-    visibility: visible;
-    position: fixed;
-    height: 50px;
-    width: auto;
-    right: 10%;  /* nav bar widht*/
-    bottom: 0;
-    cursor: pointer;
-
-    /* Make element unselectable */
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
 .arrowToNextPage{
     visibility: hidden;
 }
 
 .arrowToNextPage img{
     visibility: visible;
+    position: relative;
+    bottom: 0%;
+    right: 5%;
     height: 50px;
     width: auto;
-    margin-top: 17.5%;
-    margin-left: 77%;
     cursor: pointer;
 
     /* Make element unselectable */
@@ -256,43 +404,7 @@ form{
 }
 
 
-.specPage{ 
-    all:revert;
-    position: fixed;
-    overflow-x:hidden;
-    overflow-y: scroll;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.712);
-    margin: 0 0 0 10%;
-    color:white;
 
-}
-
-
-.mmm{
-    overflow-y: hidden;
-    height: 100%;
-    width: 100%;
-    background: url("http://wallpapercave.com/wp/LXR5gFx.png") center center no-repeat;
-    animation: breath 20s linear infinite;
-    text-align: center;
-
-}
-
-
-.specPage h1{
-    margin-top: 1.5em;
-    text-align: center;
-}
-
-.mainParagraph{
-    all:revert;
-    margin-left: 20%;
-    margin-right: 20%;
-    text-align: center;
-    font-size: 1.5em;
-}
 
 
 #loading {
@@ -325,130 +437,17 @@ form{
 
 /* About me page*/
 
-
-.paragraphHeader{
-    font-size: 3em;
-}
-
-.detailsSection{
-    float: left;
-    margin: 0 5% 0 25%;
-    width: 25%;
-}
-
-.detailsSection h1{
-    font-size: 2.5em;
-    margin: 0.5em 0;
-}
-
-.detailsSection p{
-    all:revert;
-    font-size: 1.5em;
-}
-
-.detailsInfo{
-    margin:0;
-    padding:0;
-}
-
-.detailsInfo strong{
-    color: rgba(0, 0, 0, 0.63);
-    font-size: 1.5em;
-}
-
-.detailsInfo span{
-    color:rgba(0, 4, 7, 0.582);
-    font-size: 1.25em;
-}
-
-.detailsInfo li{
-    margin-bottom: 1em;
-}
-
-
-.skillsSection{
-    float:left;
-    margin: 0 5% 0 0;
-    width:25%;
-}
-
-.skillsSection h1{
-    font-size: 2.5em;
-    margin: 0.5em 0;
-}
-
-.skillsSection p{
-    all:revert;
-    font-size: 1.5em;
-}
-
-.skillsSection ul{
-    margin: 0;
-    padding: 0;
-}
-
-.skillsSection li{
-    margin: 0 0 1em 0;
-    font-size: 1.5em;
-}
-
-.aboutMeButtons{
-    all:revert;
-    text-align: center;
-    margin: 45% 0 0 0;
-    padding: 0;
-}
-
-/*Buttons in about me page*/
-
-.aboutMeButtonStyle1{
-    all: revert;
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    margin-left:43%;
-    padding: 25px;
-    width:100px;
-    background-color: #11ABB0;
-    display: block;
-    float:left;
-}
-
-.aboutMeButtonStyle2{
-    all: revert;
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    margin-right: 37%;
-    padding: 25px;
-    width:100px;
-    background-color: #11ABB0;
-    display: block;
-    float:right;
-}
-
-.aboutMeButtonStyle1:hover{
-    background-color: rgb(41, 41, 39);
-    transition: 300ms;
-}
-
-.aboutMeButtonStyle2:hover{
-    background-color: rgb(41, 41, 39);
-    transition: 300ms;
-}
-
-
-.arrowToNextPageAboutMePage{
+.arrowToNextPage{
     visibility: hidden;
 }
 
-.arrowToNextPageAboutMePage img{
+.arrowToNextPage img{
     visibility: visible;
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
     height: 50px;
     width: auto;
-    margin: 9% 9.5% 0 0;
-    padding-bottom: 0.3%;
-    float: right;
     cursor: pointer;
 
     /* Make element unselectable */
@@ -485,5 +484,40 @@ form{
     margin-right: 20%;
 }
 
+
+/*################################# Keyframes ################################# */
+@keyframes breath {
+    0%   { background-size: 100% 100%; }
+    50% { background-size: 110% 110%;   }
+    100% { background-size: 100% 100%;  }
+}
+
+@keyframes slideOut {
+    0%   { height: 100%; }
+    50% { height: 50%; }
+    75% { height: 15%; }
+    100% { height: 0%; }
+}
+
+@keyframes fadeOut {
+    0%   { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 0; }
+}
+
+@keyframes slideIn {
+    0%   { height: 0%; }
+    50% { height: 50%; }
+    75% { height: 85%; }
+    100% { height: 100%; }
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/*############################################################################# */
 
 

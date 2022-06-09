@@ -64,7 +64,14 @@ document.getElementById("servicesNavLink").addEventListener('mouseleave', () => 
 document.getElementById("contactMeNavLink").addEventListener('mouseenter', () => document.getElementById("contactMeNavLink").style.color = 'red');
 document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
 
-window.onscroll = function() {changeToAboutMePage()};
+function clickEvent(event) {
+    if (event.clientY > document.documentElement.clientHeight/2){
+        changeToAboutMePage()
+        document.getElementById("homePage").removeEventListener("click", clickEvent);
+    }
+}
+  
+document.getElementById("homePage").addEventListener("click", clickEvent);
 
 //loading screen
 onReady(function () {
@@ -116,6 +123,20 @@ function changeToHomePage(){
     document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
 
     timerForLinks()
+
+    function clickEvent(event) {
+        if (event.clientY > document.documentElement.clientHeight/2){
+            changeToAboutMePage()
+            document.getElementById("homePage").removeEventListener("click", clickEvent);
+        }
+    }
+
+    
+      
+    document.getElementById("homePage").addEventListener("click", clickEvent);
+    
+    setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
+
 }
 
 function changeToAboutMePage(){
@@ -153,7 +174,6 @@ function changeToAboutMePage(){
         }
     }
     
-
     document.getElementById("aboutMeNavLink").addEventListener('mouseleave', () => document.getElementById("aboutMeNavLink").style.color = 'red');
 
     document.getElementById("homePageNavLink").addEventListener('mouseenter', () => document.getElementById("homePageNavLink").style.color = 'red');
@@ -170,6 +190,19 @@ function changeToAboutMePage(){
 
     timerForLinks()
 
+    function clickEvent(event) {
+        if (event.clientY > document.documentElement.clientHeight/2){ // document.getElementById("homePage")
+            changeToMyWorkPage();
+            document.getElementById("aboutMePage").removeEventListener("click", clickEvent);
+        }else if(event.clientY < document.documentElement.clientHeight/2){
+            changeToHomePage();
+            document.getElementById("aboutMePage").removeEventListener("click", clickEvent); 
+        }
+    }
+      
+    document.getElementById("aboutMePage").addEventListener("click", clickEvent);
+
+    setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
 }
 
 function changeToMyWorkPage(){
@@ -221,6 +254,20 @@ function changeToMyWorkPage(){
 
     timerForLinks();
 
+    function clickEvent(event) {
+        if (event.clientY > document.documentElement.clientHeight/2){
+            changeToServicesPage();
+            document.getElementById("myWorkPage").removeEventListener("click", clickEvent);
+        }else if(event.clientY < document.documentElement.clientHeight/2){
+            changeToAboutMePage();
+            document.getElementById("myWorkPage").removeEventListener("click", clickEvent); 
+        }
+    }
+      
+    document.getElementById("myWorkPage").addEventListener("click", clickEvent);
+
+    setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
+
 }
 
 function changeToServicesPage(){
@@ -271,6 +318,20 @@ function changeToServicesPage(){
     document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
 
     timerForLinks();
+
+    function clickEvent(event) {
+        if (event.clientY > document.documentElement.clientHeight/2){
+            changeToContactMe();
+            document.getElementById("servicesPage").removeEventListener("click", clickEvent);
+        }else if(event.clientY < document.documentElement.clientHeight/2){
+            changeToMyWorkPage();
+            document.getElementById("servicesPage").removeEventListener("click", clickEvent); 
+        }
+    }
+      
+    document.getElementById("servicesPage").addEventListener("click", clickEvent);
+
+    setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
 }
 
 function changeToContactMe(){
@@ -321,6 +382,17 @@ function changeToContactMe(){
     document.getElementById("servicesNavLink").addEventListener('mouseleave', () => document.getElementById("servicesNavLink").style.color = 'white');
 
     timerForLinks();
+
+    function clickEvent(event) {
+        if(event.clientY < document.documentElement.clientHeight/2){
+            changeToServicesPage();
+            document.getElementById("contactMePage").removeEventListener("click", clickEvent); 
+        }
+    }
+      
+    document.getElementById("contactMePage").addEventListener("click", clickEvent);
+
+    setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
 }
 
 function onReady(callback) {
