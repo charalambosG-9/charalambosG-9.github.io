@@ -31,20 +31,32 @@ function displayChange(oldPage, currentPage){
     }
 }
 
+function resetHeight(oldPage,currentPage){
+    let index = pages.indexOf(currentPage);
+
+    // for(let  i = 0; i < index; i++ ){
+    //     document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
+    // }
+
+    for(let  i = index + 1; i < pages.length; i++ ){
+        document.getElementById(pages[i]).style.animation = "slideIn 0.0s linear forwards";
+        document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
+        document.getElementById(texts[i]).style.animation = "fadeIn 0.0s linear forwards";
+    }
+
+}
+
 //state of the site when loading in 
 
 let pages = ['homePage', 'aboutMePage', 'myWorkPage', 'servicesPage','contactMePage'];
+let texts = ['homePageText', 'aboutMeText', 'myWorkText', 'servicesText','contactMeText'];
 
 let currentPage = "homePage";
 let currentText = "homePageText";
 let oldPage = "";
 let oldText = "";
 
-document.getElementById("homePage").style.display = "block";
-document.getElementById("aboutMePage").style.display = "none";
-document.getElementById("myWorkPage").style.display = "none";
-document.getElementById("servicesPage").style.display = "none";
-document.getElementById("contactMePage").style.display = "none";
+displayChange(oldPage, currentPage)
 
 document.getElementById("homePageNavLink").style.color = "red";
 document.getElementById("aboutMeNavLink").style.color = "white";
@@ -65,7 +77,7 @@ document.getElementById("contactMeNavLink").addEventListener('mouseenter', () =>
 document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
 
 function clickEvent(event) {
-    if (event.clientY > document.documentElement.clientHeight/2){
+    if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){
         changeToAboutMePage()
         document.getElementById("homePage").removeEventListener("click", clickEvent);
     }
@@ -88,13 +100,6 @@ function changeToHomePage(){
     currentPage = "homePage";
     currentText = "homePageText";
 
-    //console.log("old Text :" + oldText);
-    //console.log("new Text :" + currentText);
-    console.log("old Page :" + oldPage);
-    console.log("new Page :" + currentPage);
-
-    //resetPages();
-
     displayChange(oldPage, currentPage)
     
     document.getElementById("homePageNavLink").style.color = "red";
@@ -107,6 +112,8 @@ function changeToHomePage(){
         document.getElementById(currentPage).style.animation = "slideIn 1s linear forwards";
         document.getElementById(currentText).style.animation = "fadeIn 0.5s linear forwards";
     }
+
+    resetHeight(oldPage,currentPage)
 
     document.getElementById("homePageNavLink").addEventListener('mouseleave', () => document.getElementById("homePageNavLink").style.color = 'red');
 
@@ -124,16 +131,16 @@ function changeToHomePage(){
 
     timerForLinks()
 
+    // setTimeout(document.getElementById(currentPage).style.animation = "breath 20s linear infinite",50000);
+
     function clickEvent(event) {
-        if (event.clientY > document.documentElement.clientHeight/2){
+        if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){
             changeToAboutMePage()
             document.getElementById("homePage").removeEventListener("click", clickEvent);
         }
     }
   
     document.getElementById("homePage").addEventListener("click", clickEvent);
-
-    // setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
 }
 
 function changeToAboutMePage(){
@@ -143,13 +150,6 @@ function changeToAboutMePage(){
 
     currentPage = "aboutMePage";
     currentText = "aboutMeText";
-
-    //console.log("old Text :" + oldText);
-    //console.log("new Text :" + currentText);
-    console.log("old Page :" + oldPage);
-    console.log("new Page :" + currentPage);
-
-    //resetPages();
 
     displayChange(oldPage, currentPage)
     
@@ -170,8 +170,9 @@ function changeToAboutMePage(){
             
         }
     }
-    
 
+    resetHeight(oldPage,currentPage)
+    
     document.getElementById("aboutMeNavLink").addEventListener('mouseleave', () => document.getElementById("aboutMeNavLink").style.color = 'red');
 
     document.getElementById("homePageNavLink").addEventListener('mouseenter', () => document.getElementById("homePageNavLink").style.color = 'red');
@@ -189,18 +190,16 @@ function changeToAboutMePage(){
     timerForLinks()
 
     function clickEvent(event) {
-        if (event.clientY > document.documentElement.clientHeight/2){ // document.getElementById("homePage")
+        if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){ // document.getElementById("homePage")
             changeToMyWorkPage();
             document.getElementById("aboutMePage").removeEventListener("click", clickEvent);
-        }else if(event.clientY < document.documentElement.clientHeight/2){
+        }else if(event.clientY < document.documentElement.clientHeight/5){
             changeToHomePage();
             document.getElementById("aboutMePage").removeEventListener("click", clickEvent); 
         }
     }
       
     document.getElementById("aboutMePage").addEventListener("click", clickEvent);
-
-    // setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
 
 }
 
@@ -211,11 +210,6 @@ function changeToMyWorkPage(){
 
     currentPage = "myWorkPage";
     currentText = "myWorkText";
-
-    //console.log("old Text :" + oldText);
-    //console.log("new Text :" + currentText);
-    console.log("old Page :" + oldPage);
-    console.log("new Page :" + currentPage);
     
     //resetPages();
 
@@ -237,6 +231,8 @@ function changeToMyWorkPage(){
         }
     }
 
+    resetHeight(oldPage,currentPage)
+
     document.getElementById("myWorkNavLink").addEventListener('mouseleave', () => document.getElementById("myWorkNavLink").style.color = 'red');
 
     document.getElementById("homePageNavLink").addEventListener('mouseenter', () => document.getElementById("homePageNavLink").style.color = 'red');
@@ -254,18 +250,16 @@ function changeToMyWorkPage(){
     timerForLinks();
 
     function clickEvent(event) {
-        if (event.clientY > document.documentElement.clientHeight/2){
+        if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){
             changeToServicesPage();
             document.getElementById("myWorkPage").removeEventListener("click", clickEvent);
-        }else if(event.clientY < document.documentElement.clientHeight/2){
+        }else if(event.clientY < document.documentElement.clientHeight/5){
             changeToAboutMePage();
             document.getElementById("myWorkPage").removeEventListener("click", clickEvent); 
         }
     }
       
     document.getElementById("myWorkPage").addEventListener("click", clickEvent);
-
-    // setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
 
 }
 
@@ -276,11 +270,6 @@ function changeToServicesPage(){
 
     currentPage = "servicesPage";
     currentText = "servicesText";
-
-    //console.log("old Text :" + oldText);
-    //console.log("new Text :" + currentText);
-    console.log("old Page :" + oldPage);
-    console.log("new Page :" + currentPage);
     
     //resetPages();
 
@@ -302,6 +291,8 @@ function changeToServicesPage(){
         }
     }
 
+    resetHeight(oldPage,currentPage)
+
     document.getElementById("servicesNavLink").addEventListener('mouseleave', () => document.getElementById("servicesNavLink").style.color = 'red');
 
     document.getElementById("homePageNavLink").addEventListener('mouseenter', () => document.getElementById("homePageNavLink").style.color = 'red');
@@ -319,18 +310,16 @@ function changeToServicesPage(){
     timerForLinks();
 
     function clickEvent(event) {
-        if (event.clientY > document.documentElement.clientHeight/2){
+        if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){
             changeToContactMe();
             document.getElementById("servicesPage").removeEventListener("click", clickEvent);
-        }else if(event.clientY < document.documentElement.clientHeight/2){
+        }else if(event.clientY < document.documentElement.clientHeight/5){
             changeToMyWorkPage();
             document.getElementById("servicesPage").removeEventListener("click", clickEvent); 
         }
     }
       
     document.getElementById("servicesPage").addEventListener("click", clickEvent);
-
-    // setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
 }
 
 function changeToContactMe(){
@@ -340,11 +329,6 @@ function changeToContactMe(){
 
     currentPage = "contactMePage";
     currentText = "contactMeText";
-
-    //console.log("old Text :" + oldText);
-    //console.log("new Text :" + currentText);
-    console.log("old Page :" + oldPage);
-    console.log("new Page :" + currentPage);
     
     //resetPages();
 
@@ -383,15 +367,13 @@ function changeToContactMe(){
     timerForLinks();
 
     function clickEvent(event) {
-        if(event.clientY < document.documentElement.clientHeight/2){
+        if(event.clientY < document.documentElement.clientHeight/5){
             changeToServicesPage();
             document.getElementById("contactMePage").removeEventListener("click", clickEvent); 
         }
     }
       
     document.getElementById("contactMePage").addEventListener("click", clickEvent);
-
-    // setTimeout(function hideOldPage() { document.getElementById(oldPage).style.display = "none"; },1100) // hide old page
 }
 
 function onReady(callback) {

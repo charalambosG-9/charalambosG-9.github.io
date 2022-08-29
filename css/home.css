@@ -59,6 +59,7 @@ main h1{
 .page{
     transform: scale(1.0);
     overflow-y: hidden;
+    overflow-x: hidden;
     height: 100%;
     width:100%;
     background-image: url("http://wallpapercave.com/wp/LXR5gFx.png");
@@ -516,7 +517,7 @@ form{
 /*################################# Keyframes ################################# */
 @keyframes breath {
     0%   { background-size: 100% 100%; }
-    50% { background-size: 110% 110%;   }
+    50% { background-size: 200% 200%;   }
     100% { background-size: 100% 100%;  }
 }
 
