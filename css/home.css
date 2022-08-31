@@ -37,7 +37,6 @@ li a{
     display: none;
 }
   
-
 main{
     position: absolute;
     height: 100%;
@@ -60,15 +59,23 @@ main h1{
     transform: scale(1.0);
     overflow-y: hidden;
     overflow-x: hidden;
+    z-index: -1;
     height: 100%;
-    width:100%;
+    width: 100%;
     background-image: url("http://wallpapercave.com/wp/LXR5gFx.png");
     animation: breath 20s linear infinite;  
     background-repeat: no-repeat; 
     background-position: center center; 
     background-attachment: fixed;
-    background-size: cover;
     text-align: center; 
+}
+
+#homePage{
+    background-image: url("../images/backgroundPicture.png");
+}
+
+.breathAnimation{
+    animation: breath 20s linear infinite;  
 }
 
 .specPage{ 
@@ -353,6 +360,7 @@ form{
         height: 100%; /* Full height */
         position: fixed; /* Make it stick, even on scroll */
         overflow: auto; /* Enable scrolling if the sidenav has too much content */
+        z-index: 100;
     }
     
     ul {
@@ -451,8 +459,6 @@ form{
         caret-color: rgb(252, 97, 97);
         
     }
-    
-
 }
 
 /* Button animation */
@@ -479,7 +485,6 @@ form{
     font-size: 1em;
 }
 
-
 .learnMoreHyperlink{
     text-decoration: underline;
     color:blue;
@@ -499,7 +504,6 @@ form{
     background-position: center;
 }
 
-
 .currentPage{
     color: red
 }
@@ -513,36 +517,35 @@ form{
     color:red
 }
 
-
 /*################################# Keyframes ################################# */
 @keyframes breath {
     0%   { background-size: 100% 100%; }
-    50% { background-size: 200% 200%;   }
-    100% { background-size: 100% 100%;  }
+    50% { background-size: 110% 110%; }
+    100% { background-size: 100% 100%; }
 }
 
 @keyframes slideOut {
-    0%   { height: 100%; }
-    50% { height: 50%; }
-    75% { height: 15%; }
-    100% { height: 0%; }
+    0% { height: 100%; background-size: 100% 100%; }
+    50% { height: 50%; background-size: 100% 100%; }
+    75% { height: 15%; background-size: 100% 100%; }
+    100% { height: 0%; background-size: 100% 100%; }
 }
 
 @keyframes fadeOut {
-    0%   { opacity: 1; }
+    0% { opacity: 1; }
     50% { opacity: 0.5; }
     100% { opacity: 0; }
 }
 
 @keyframes slideIn {
-    0%   { height: 0%; }
-    50% { height: 50%; }
-    75% { height: 85%; }
-    100% { height: 100%; }
+    0% { height: 0%; background-size: 100% 100%; }
+    50% { height: 50%; background-size: 100% 100%; }
+    75% { height: 85%; background-size: 100% 100%; }
+    100% { height: 100%; background-size: 100% 100%; }
 }
 
 @keyframes fadeIn {
-    0%   { opacity: 0; }
+    0% { opacity: 0; }
     50% { opacity: 0.5; }
     100% { opacity: 1; }
 }

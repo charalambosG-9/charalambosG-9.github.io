@@ -34,10 +34,6 @@ function displayChange(oldPage, currentPage){
 function resetHeight(oldPage,currentPage){
     let index = pages.indexOf(currentPage);
 
-    // for(let  i = 0; i < index; i++ ){
-    //     document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
-    // }
-
     for(let  i = index + 1; i < pages.length; i++ ){
         document.getElementById(pages[i]).style.animation = "slideIn 0.0s linear forwards";
         document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
@@ -46,10 +42,23 @@ function resetHeight(oldPage,currentPage){
 
 }
 
+// Changes static colors of links
+function changeNavLinkStaticColor(currentLink){
+
+    for(let i = 0; i < navLinks.length; i++ ){
+        if (navLinks[i] == currentLink)
+            document.getElementById(navLinks[i]).style.color = "red";
+        else
+            document.getElementById(navLinks[i]).style.color = "white";
+    }
+
+}
+
 //state of the site when loading in 
 
 let pages = ['homePage', 'aboutMePage', 'myWorkPage', 'servicesPage','contactMePage'];
 let texts = ['homePageText', 'aboutMeText', 'myWorkText', 'servicesText','contactMeText'];
+let navLinks = ["homePageNavLink", "aboutMeNavLink", "myWorkNavLink", "servicesNavLink", "contactMeNavLink"]
 
 let currentPage = "homePage";
 let currentText = "homePageText";
@@ -58,11 +67,7 @@ let oldText = "";
 
 displayChange(oldPage, currentPage)
 
-document.getElementById("homePageNavLink").style.color = "red";
-document.getElementById("aboutMeNavLink").style.color = "white";
-document.getElementById("myWorkNavLink").style.color = "white";
-document.getElementById("servicesNavLink").style.color = "white";
-document.getElementById("contactMeNavLink").style.color = "white";
+changeNavLinkStaticColor("homePageNavLink");
 
 document.getElementById("aboutMeNavLink").addEventListener('mouseenter', () => document.getElementById("aboutMeNavLink").style.color = 'red');
 document.getElementById("aboutMeNavLink").addEventListener('mouseleave', () => document.getElementById("aboutMeNavLink").style.color = 'white');
@@ -102,15 +107,12 @@ function changeToHomePage(){
 
     displayChange(oldPage, currentPage)
     
-    document.getElementById("homePageNavLink").style.color = "red";
-    document.getElementById("aboutMeNavLink").style.color = "white";
-    document.getElementById("myWorkNavLink").style.color = "white";
-    document.getElementById("servicesNavLink").style.color = "white";
-    document.getElementById("contactMeNavLink").style.color = "white";
+    changeNavLinkStaticColor("homePageNavLink");
 
     if(oldPage.localeCompare(currentPage) != 0){
         document.getElementById(currentPage).style.animation = "slideIn 1s linear forwards";
         document.getElementById(currentText).style.animation = "fadeIn 0.5s linear forwards";
+        setTimeout(function(){document.getElementById(currentPage).style.animation = ''; document.getElementById(currentPage).classList.add("breathAnimation");},1000)
     }
 
     resetHeight(oldPage,currentPage)
@@ -130,8 +132,6 @@ function changeToHomePage(){
     document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
 
     timerForLinks()
-
-    // setTimeout(document.getElementById(currentPage).style.animation = "breath 20s linear infinite",50000);
 
     function clickEvent(event) {
         if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){
@@ -153,13 +153,8 @@ function changeToAboutMePage(){
 
     displayChange(oldPage, currentPage)
     
-    document.getElementById("homePageNavLink").style.color = "white";
-    document.getElementById("aboutMeNavLink").style.color = "red";
-    document.getElementById("myWorkNavLink").style.color = "white";
-    document.getElementById("servicesNavLink").style.color = "white";
-    document.getElementById("contactMeNavLink").style.color = "white";
+    changeNavLinkStaticColor("aboutMeNavLink");
 
-    
     if(oldPage.localeCompare(currentPage) != 0){
         if(oldPage.localeCompare("homePage") == 0){
             document.getElementById(oldPage).style.animation = "slideOut 1s linear forwards";
@@ -167,7 +162,7 @@ function changeToAboutMePage(){
         }else{
             document.getElementById(currentText).style.animation = "fadeIn 0.5s linear forwards";
             document.getElementById(currentPage).style.animation = "slideIn 1s linear forwards";
-            
+            setTimeout(function(){document.getElementById(currentPage).style.animation = ''; document.getElementById(currentPage).classList.add("breathAnimation");},1000)
         }
     }
 
@@ -215,11 +210,7 @@ function changeToMyWorkPage(){
 
     displayChange(oldPage, currentPage)
     
-    document.getElementById("homePageNavLink").style.color = "white";
-    document.getElementById("aboutMeNavLink").style.color = "white";
-    document.getElementById("myWorkNavLink").style.color = "red";
-    document.getElementById("servicesNavLink").style.color = "white";
-    document.getElementById("contactMeNavLink").style.color = "white";
+    changeNavLinkStaticColor("myWorkNavLink");
 
     if(oldPage.localeCompare(currentPage) != 0){
         if(oldPage.localeCompare("homePage") == 0 || oldPage.localeCompare("aboutMePage") == 0){
@@ -228,6 +219,7 @@ function changeToMyWorkPage(){
         }else{
             document.getElementById(currentPage).style.animation = "slideIn 1s linear forwards";
             document.getElementById(currentText).style.animation = "fadeIn 0.5s linear forwards";
+            setTimeout(function(){document.getElementById(currentPage).style.animation = ''; document.getElementById(currentPage).classList.add("breathAnimation");},1000)
         }
     }
 
@@ -275,11 +267,7 @@ function changeToServicesPage(){
 
     displayChange(oldPage, currentPage)
     
-    document.getElementById("homePageNavLink").style.color = "white";
-    document.getElementById("aboutMeNavLink").style.color = "white";
-    document.getElementById("myWorkNavLink").style.color = "white";
-    document.getElementById("servicesNavLink").style.color = "red";
-    document.getElementById("contactMeNavLink").style.color = "white";
+    changeNavLinkStaticColor("servicesNavLink");
 
     if(oldPage.localeCompare(currentPage) != 0){
         if(oldPage.localeCompare("homePage") == 0 || oldPage.localeCompare("aboutMePage") == 0 || oldPage.localeCompare("myWorkPage") == 0){
@@ -288,6 +276,7 @@ function changeToServicesPage(){
         }else{
             document.getElementById(currentPage).style.animation = "slideIn 1s linear forwards";
             document.getElementById(currentText).style.animation = "fadeIn 0.5s linear forwards";
+            setTimeout(function(){document.getElementById(currentPage).style.animation = ''; document.getElementById(currentPage).classList.add("breathAnimation");},1000)
         }
     }
 
@@ -334,11 +323,7 @@ function changeToContactMe(){
 
     displayChange(oldPage, currentPage)
     
-    document.getElementById("homePageNavLink").style.color = "white";
-    document.getElementById("aboutMeNavLink").style.color = "white";
-    document.getElementById("myWorkNavLink").style.color = "white";
-    document.getElementById("servicesNavLink").style.color = "white";
-    document.getElementById("contactMeNavLink").style.color = "red";
+    changeNavLinkStaticColor("contactMeNavLink");
 
     if(oldPage.localeCompare(currentPage) != 0){
         if(oldPage.localeCompare("homePage") == 0 || oldPage.localeCompare("aboutMePage") == 0 || oldPage.localeCompare("myWorkPage") == 0 || oldPage.localeCompare("servicesPage") == 0){
@@ -347,6 +332,7 @@ function changeToContactMe(){
         }else{
             document.getElementById(currentPage).style.animation = "slideIn 1s linear forwards";
             document.getElementById(currentText).style.animation = "fadeIn 0.5s linear forwards";
+            setTimeout(function(){document.getElementById(currentPage).style.animation = ''; document.getElementById(currentPage).classList.add("breathAnimation");},1000)
         }
     }
 
