@@ -43,16 +43,18 @@ main{
     width: 100%;
 }
 
-main h1{
-    margin-top: 10%;
-    font-size: 5vw;
+.page h1{
+    margin-top: 30%;
+    font-size: 35px;
     font-weight: bold;
 }
 
 .page p{
-    padding-left: 40%;
-    padding-right: 40%;
-    font-size: 2vmax;
+    margin-top: 20px;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .page{
@@ -386,8 +388,21 @@ form{
     main{
         position: absolute;
         height: 100%;
-        width: 100%;
+        width: 90%;
         margin-left: 10%;
+        display: block;
+        text-align: center;
+    }
+
+    .page h1{
+        margin-top: 10%;
+        font-size: 100px;
+    }
+
+    .page p{
+        padding-left: 30%;
+        padding-right: 30%;
+        font-size: 30px;
     }
 
     .detailsInfo strong{

@@ -54,6 +54,19 @@ function changeNavLinkStaticColor(currentLink){
 
 }
 
+// Changes hover color of links
+function changeNavHoverColor(currentLink){
+
+    for(let i = 0; i < navLinks.length; i++ ){
+        if (navLinks[i] != currentLink){
+            document.getElementById(navLinks[i]).addEventListener('mouseenter', () => document.getElementById(navLinks[i]).style.color = 'red');
+            document.getElementById(navLinks[i]).addEventListener('mouseleave', () => document.getElementById(navLinks[i]).style.color = 'white');
+        }else
+            document.getElementById(navLinks[i]).addEventListener('mouseleave', () => document.getElementById(navLinks[i]).style.color = 'red');
+    }
+
+}
+
 //state of the site when loading in 
 
 let pages = ['homePage', 'aboutMePage', 'myWorkPage', 'servicesPage','contactMePage'];
@@ -69,17 +82,7 @@ displayChange(oldPage, currentPage)
 
 changeNavLinkStaticColor("homePageNavLink");
 
-document.getElementById("aboutMeNavLink").addEventListener('mouseenter', () => document.getElementById("aboutMeNavLink").style.color = 'red');
-document.getElementById("aboutMeNavLink").addEventListener('mouseleave', () => document.getElementById("aboutMeNavLink").style.color = 'white');
-
-document.getElementById("myWorkNavLink").addEventListener('mouseenter', () => document.getElementById("myWorkNavLink").style.color = 'red');
-document.getElementById("myWorkNavLink").addEventListener('mouseleave', () => document.getElementById("myWorkNavLink").style.color = 'white');
-
-document.getElementById("servicesNavLink").addEventListener('mouseenter', () => document.getElementById("servicesNavLink").style.color = 'red');
-document.getElementById("servicesNavLink").addEventListener('mouseleave', () => document.getElementById("servicesNavLink").style.color = 'white');
-
-document.getElementById("contactMeNavLink").addEventListener('mouseenter', () => document.getElementById("contactMeNavLink").style.color = 'red');
-document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
+changeNavHoverColor("homePageNavLink")
 
 function clickEvent(event) {
     if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){
@@ -117,19 +120,7 @@ function changeToHomePage(){
 
     resetHeight(oldPage,currentPage)
 
-    document.getElementById("homePageNavLink").addEventListener('mouseleave', () => document.getElementById("homePageNavLink").style.color = 'red');
-
-    document.getElementById("aboutMeNavLink").addEventListener('mouseenter', () => document.getElementById("aboutMeNavLink").style.color = 'red');
-    document.getElementById("aboutMeNavLink").addEventListener('mouseleave', () => document.getElementById("aboutMeNavLink").style.color = 'white');
-    
-    document.getElementById("myWorkNavLink").addEventListener('mouseenter', () => document.getElementById("myWorkNavLink").style.color = 'red');
-    document.getElementById("myWorkNavLink").addEventListener('mouseleave', () => document.getElementById("myWorkNavLink").style.color = 'white');
-    
-    document.getElementById("servicesNavLink").addEventListener('mouseenter', () => document.getElementById("servicesNavLink").style.color = 'red');
-    document.getElementById("servicesNavLink").addEventListener('mouseleave', () => document.getElementById("servicesNavLink").style.color = 'white');
-    
-    document.getElementById("contactMeNavLink").addEventListener('mouseenter', () => document.getElementById("contactMeNavLink").style.color = 'red');
-    document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
+    changeNavHoverColor("homePageNavLink")
 
     timerForLinks()
 
@@ -168,19 +159,7 @@ function changeToAboutMePage(){
 
     resetHeight(oldPage,currentPage)
     
-    document.getElementById("aboutMeNavLink").addEventListener('mouseleave', () => document.getElementById("aboutMeNavLink").style.color = 'red');
-
-    document.getElementById("homePageNavLink").addEventListener('mouseenter', () => document.getElementById("homePageNavLink").style.color = 'red');
-    document.getElementById("homePageNavLink").addEventListener('mouseleave', () => document.getElementById("homePageNavLink").style.color = 'white');
-
-    document.getElementById("myWorkNavLink").addEventListener('mouseenter', () => document.getElementById("myWorkNavLink").style.color = 'red');
-    document.getElementById("myWorkNavLink").addEventListener('mouseleave', () => document.getElementById("myWorkNavLink").style.color = 'white');
-
-    document.getElementById("servicesNavLink").addEventListener('mouseenter', () => document.getElementById("servicesNavLink").style.color = 'red');
-    document.getElementById("servicesNavLink").addEventListener('mouseleave', () => document.getElementById("servicesNavLink").style.color = 'white');
-
-    document.getElementById("contactMeNavLink").addEventListener('mouseenter', () => document.getElementById("contactMeNavLink").style.color = 'red');
-    document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');    
+    changeNavHoverColor("aboutMeNavLink")
 
     timerForLinks()
 
@@ -205,8 +184,6 @@ function changeToMyWorkPage(){
 
     currentPage = "myWorkPage";
     currentText = "myWorkText";
-    
-    //resetPages();
 
     displayChange(oldPage, currentPage)
     
@@ -225,19 +202,7 @@ function changeToMyWorkPage(){
 
     resetHeight(oldPage,currentPage)
 
-    document.getElementById("myWorkNavLink").addEventListener('mouseleave', () => document.getElementById("myWorkNavLink").style.color = 'red');
-
-    document.getElementById("homePageNavLink").addEventListener('mouseenter', () => document.getElementById("homePageNavLink").style.color = 'red');
-    document.getElementById("homePageNavLink").addEventListener('mouseleave', () => document.getElementById("homePageNavLink").style.color = 'white');
-
-    document.getElementById("aboutMeNavLink").addEventListener('mouseenter', () => document.getElementById("aboutMeNavLink").style.color = 'red');
-    document.getElementById("aboutMeNavLink").addEventListener('mouseleave', () => document.getElementById("aboutMeNavLink").style.color = 'white');
-
-    document.getElementById("servicesNavLink").addEventListener('mouseenter', () => document.getElementById("servicesNavLink").style.color = 'red');
-    document.getElementById("servicesNavLink").addEventListener('mouseleave', () => document.getElementById("servicesNavLink").style.color = 'white');
-
-    document.getElementById("contactMeNavLink").addEventListener('mouseenter', () => document.getElementById("contactMeNavLink").style.color = 'red');
-    document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
+    changeNavHoverColor("myWorkNavLink")
 
     timerForLinks();
 
@@ -262,8 +227,6 @@ function changeToServicesPage(){
 
     currentPage = "servicesPage";
     currentText = "servicesText";
-    
-    //resetPages();
 
     displayChange(oldPage, currentPage)
     
@@ -282,19 +245,7 @@ function changeToServicesPage(){
 
     resetHeight(oldPage,currentPage)
 
-    document.getElementById("servicesNavLink").addEventListener('mouseleave', () => document.getElementById("servicesNavLink").style.color = 'red');
-
-    document.getElementById("homePageNavLink").addEventListener('mouseenter', () => document.getElementById("homePageNavLink").style.color = 'red');
-    document.getElementById("homePageNavLink").addEventListener('mouseleave', () => document.getElementById("homePageNavLink").style.color = 'white');
-
-    document.getElementById("aboutMeNavLink").addEventListener('mouseenter', () => document.getElementById("aboutMeNavLink").style.color = 'red');
-    document.getElementById("aboutMeNavLink").addEventListener('mouseleave', () => document.getElementById("aboutMeNavLink").style.color = 'white');
-
-    document.getElementById("myWorkNavLink").addEventListener('mouseenter', () => document.getElementById("myWorkNavLink").style.color = 'red');
-    document.getElementById("myWorkNavLink").addEventListener('mouseleave', () => document.getElementById("myWorkNavLink").style.color = 'white');
-
-    document.getElementById("contactMeNavLink").addEventListener('mouseenter', () => document.getElementById("contactMeNavLink").style.color = 'red');
-    document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'white');
+    changeNavHoverColor("servicesNavLink")
 
     timerForLinks();
 
@@ -318,8 +269,6 @@ function changeToContactMe(){
 
     currentPage = "contactMePage";
     currentText = "contactMeText";
-    
-    //resetPages();
 
     displayChange(oldPage, currentPage)
     
@@ -336,19 +285,7 @@ function changeToContactMe(){
         }
     }
 
-    document.getElementById("contactMeNavLink").addEventListener('mouseleave', () => document.getElementById("contactMeNavLink").style.color = 'red');
-
-    document.getElementById("homePageNavLink").addEventListener('mouseenter', () => document.getElementById("homePageNavLink").style.color = 'red');
-    document.getElementById("homePageNavLink").addEventListener('mouseleave', () => document.getElementById("homePageNavLink").style.color = 'white');
-
-    document.getElementById("aboutMeNavLink").addEventListener('mouseenter', () => document.getElementById("aboutMeNavLink").style.color = 'red');
-    document.getElementById("aboutMeNavLink").addEventListener('mouseleave', () => document.getElementById("aboutMeNavLink").style.color = 'white');
-
-    document.getElementById("myWorkNavLink").addEventListener('mouseenter', () => document.getElementById("myWorkNavLink").style.color = 'red');
-    document.getElementById("myWorkNavLink").addEventListener('mouseleave', () => document.getElementById("myWorkNavLink").style.color = 'white');
-
-    document.getElementById("servicesNavLink").addEventListener('mouseenter', () => document.getElementById("servicesNavLink").style.color = 'red');
-    document.getElementById("servicesNavLink").addEventListener('mouseleave', () => document.getElementById("servicesNavLink").style.color = 'white');
+    changeNavHoverColor("contactMeNavLink")
 
     timerForLinks();
 
