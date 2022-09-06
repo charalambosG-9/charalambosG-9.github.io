@@ -5,7 +5,7 @@
     list-style: none;
 }
 
-html::-webkit-scrollbar {
+html::-webkit-scrollbar{
     display: none;
 }
 
@@ -77,14 +77,12 @@ main{
 }
 
 .breathAnimation{
-    animation: breath 20s linear infinite;  
+    animation: breath 20s linear infinite; 
 }
 
 .specPage{ 
     z-index: -1000;
-    position: fixed;
     overflow-x:hidden;
-    overflow-y: scroll;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.712);
@@ -93,11 +91,14 @@ main{
     text-align: center;
 }
 
+.specPage h1{
+    font-weight: 500;
+}
+
 .mainTitle{
     margin-top: 1.5em;
     font-size: 5vw;
-    font-weight: bold;
-    text-align: center;
+    font-weight: 600;
 }
 
 .mainParagraph{
@@ -116,40 +117,37 @@ main{
     margin-top: 1em;
 }
 
-.detailsSection{
-    float: left;
-    margin: 0 5% 0 18%;
-    width: 25%;
+.detailsSection{    
+    width: 100%;
+    text-align: center;
 }
 
 .detailsSection h1{
     font-size: 3vmax;
-    margin: 0.5em 0;
+    text-align: center;
 }
 
 .detailsSection p{
-    all:revert;
     font-size: 2vmax;
+    margin: 0 20% 5% 20%;
+    text-align: center;
 }
 
 .detailsInfo{
     all:revert;
-    margin:0;
-    padding:0;
+    padding-left: 0;
 }
 
 .detailsInfo strong{
     color: rgba(0, 0, 0, 0.63);
     font-size: 1.5vmax;
     position: relative;
-    right:15px;
 }
 
 .detailsInfo span{
     color:rgba(0, 4, 7, 0.582);
     font-size: 1.5vmax;
     position: relative;
-    right:15px;
 }
 
 .detailsInfo li{
@@ -157,9 +155,8 @@ main{
 }
 
 .skillsSection{
-    float:left;
-    margin: 0 5% 0 7%;
-    width:25%;
+    width:100%;
+    text-align: center;
 }
 
 .skillsSection h1{
@@ -168,26 +165,25 @@ main{
 }
 
 .skillsSection p{
-    all:revert;
     font-size: 2vmax;
+    margin: 0 20% 5% 20%;
+    text-align: center;
 }
 
 .skillsSection ul{
     all:revert;
-    margin: 0;
+    margin: 20px 20% 50px 20%;
     padding: 0;
 }
 
 .skillsSection li{
-    margin: 0 0 1em 0;
+    margin: 0 0 25px 0;
     font-size: 1.5em;
 }
 
 .skillsInfo strong{
     color: rgba(0, 0, 0, 0.63);
-    font-size: 1.5vmax;
-    position: relative;
-    right:15px;
+    font-size: 20px;
 }
 
 .aboutMeButtons{
@@ -356,6 +352,10 @@ form{
 
 @media screen and (min-width:950px){
 
+    html::-webkit-scrollbar:not(.specPage){
+        display: none;
+    }
+
     nav{
         width: 10%;
         background-color: black;
@@ -405,12 +405,36 @@ form{
         font-size: 30px;
     }
 
-    .detailsInfo strong{
-        right:0px;
+    .specPage{ 
+        width: 90%;
     }
 
-    .detailsInfo span{
-        right:0px;
+    .detailsSection{
+        width:25%;
+        float: left;
+        margin: 0 5% 0 18%;
+    }
+
+    .detailsSection p{
+        margin: 0;
+    }
+
+    .skillsSection{
+        float: left;
+        margin: 0 5% 0 7%;
+        width:25%;
+    }
+
+    .skillsSection p{
+        margin: 0;
+    }
+
+    .skillsSection ul{
+        margin: 20px 0 50px 0;
+    }
+
+    .skillsInfo strong{
+        font-size: 30px;
     }
 
     .aboutMeButtonStyle1{     
@@ -428,7 +452,7 @@ form{
         width:100px;
         float:left;
     }
-    
+
     .col1{
         float: left;
         width:35%;
