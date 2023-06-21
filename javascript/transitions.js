@@ -57,6 +57,21 @@ function changeNavHoverColor(currentLink){
     }
 }
 
+function resetHeight(currentPage){
+    let index = pages.indexOf(currentPage);
+
+    // for(let  i = 0; i < index; i++ ){
+    //     document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
+    // }
+
+    for(let  i = index + 1; i < pages.length; i++ ){
+        document.getElementById(pages[i]).style.animation = "slideIn 0.0s linear forwards";
+        document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
+        document.getElementById(texts[i]).style.animation = "fadeIn 0.0s linear forwards";
+    }
+
+}
+
 // State of the site when loading in 
 
 let pages = ['homePage', 'aboutMePage', 'myWorkPage', 'servicesPage','contactMePage'];
@@ -76,12 +91,8 @@ changeNavHoverColor("homePageNavLink")
 
 function clickEvent(event) {
 
-    let index = 9;
-    
-    for(let i = 0; i < pages.length; i++)
-        if (currentPage == pages[i])
-            index = i;
-        
+    let index = pages.indexOf(currentPage);
+   
     if (document.documentElement.clientWidth < 95000){
         if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){
             console.log("here");
@@ -150,7 +161,8 @@ function changeEverything(index){
 
     timerForLinks();
       
-    
     setTimeout(function(){document.getElementById(currentPage).addEventListener("click", clickEvent);}, 1000); 
+
+    resetHeight(currentPage);
 
 }
