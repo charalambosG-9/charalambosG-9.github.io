@@ -75,10 +75,23 @@ changeNavLinkStaticColor("homePageNavLink");
 changeNavHoverColor("homePageNavLink")
 
 function clickEvent(event) {
-    if (document.documentElement.clientWidth < 1500){
+
+    let index = 9;
+    
+    for(let i = 0; i < pages.length; i++)
+        if (currentPage == pages[i])
+            index = i;
+        
+    if (document.documentElement.clientWidth < 95000){
         if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){
-            changeToAboutMePage()
-            document.getElementById("homePage").removeEventListener("click", clickEvent);
+            console.log("here");
+            if(index < pages.length - 1)
+                changeEverything(index+1);
+        }
+
+        if (event.clientY < document.documentElement.clientHeight/5){
+            if(index > 0) 
+                changeEverything(index-1);
         }
     }
 }
@@ -137,6 +150,7 @@ function changeEverything(index){
 
     timerForLinks();
       
-    document.getElementById("contactMePage").addEventListener("click", clickEvent);
+    
+    setTimeout(function(){document.getElementById(currentPage).addEventListener("click", clickEvent);}, 1000); 
 
 }
