@@ -107,15 +107,17 @@ main{
     font-size: 2vmax;
 }
 
+.paragraphHeader{
+    font-size: 3vmax;
+    margin-top: 1em;
+}
+
 .summaryParagraph{
     padding: 0 20%;
     font-size: 2vmax;
 }
 
-.paragraphHeader{
-    font-size: 3vmax;
-    margin-top: 1em;
-}
+/* ################################################# About me Page #########################################################*/
 
 .detailsSection{    
     width: 100%;
@@ -136,17 +138,16 @@ main{
 .detailsInfo{
     all:revert;
     padding-left: 0;
+    font-size: 2vmax;
 }
 
 .detailsInfo strong{
     color: rgba(0, 0, 0, 0.63);
-    font-size: 1.5vmax;
     position: relative;
 }
 
 .detailsInfo span{
-    color:rgba(0, 4, 7, 0.582);
-    font-size: 1.5vmax;
+    color:rgba(0, 4, 7, 0.582); 
     position: relative;
 }
 
@@ -219,13 +220,6 @@ main{
     float:left;
 }
 
-.tempForTroubleshooting{
-    float: left;
-    visibility: hidden;
-    margin-top: -5%;
-    width:100%
-}
-
 .aboutMeButtonStyle1:hover{
     background-color: rgb(41, 41, 39);
     transition: 300ms;
@@ -235,6 +229,8 @@ main{
     background-color: rgb(41, 41, 39);
     transition: 300ms;
 }
+
+/* ################################################# End of About me Page #########################################################*/
 
 .arrowToNextPage{
     visibility: hidden;
@@ -409,6 +405,9 @@ form{
         width: 90%;
     }
 
+
+    /* ################################################# About me Page #########################################################*/
+
     .detailsSection{
         width:25%;
         float: left;
@@ -417,6 +416,10 @@ form{
 
     .detailsSection p{
         margin: 0;
+    }
+
+    .detailsInfo{
+        font-size: 1.5vmax;
     }
 
     .skillsSection{
@@ -452,6 +455,8 @@ form{
         width:100px;
         float:left;
     }
+
+    /* ################################################# End of About me Page #########################################################*/
 
     .col1{
         float: left;
