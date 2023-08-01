@@ -119,6 +119,11 @@ main{
 
 /* ################################################# About me Page #########################################################*/
 
+.aboutMeColumns{
+    width: 100%;
+    text-align: center;
+}
+
 .detailsSection{    
     width: 100%;
     text-align: center;
@@ -199,25 +204,9 @@ main{
     font-size: 1em;
     background-color: #11ABB0;
     display: block;
-}
-
-
-.aboutMeButtonStyle1{  
-    margin-left:15%;
-    margin-right: 15%;
-    margin-bottom: 5%;
-    padding: 1em;
     width:70%;
-    float:left;
-}
-
-.aboutMeButtonStyle2{
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 5%;
+    margin: 0 15% 5% 15%;
     padding:1em;
-    width:70%;
-    float:left;
 }
 
 .aboutMeButtonStyle1:hover{
@@ -240,7 +229,7 @@ main{
     visibility: visible;
     position: fixed;
     bottom: 0%;
-    right: 0%;
+    right: 1%;
     height: 4vmax;
     width: auto;
     cursor: pointer;
@@ -405,13 +394,13 @@ form{
         width: 90%;
     }
 
-
     /* ################################################# About me Page #########################################################*/
 
     .detailsSection{
-        width:25%;
-        float: left;
-        margin: 0 5% 0 18%;
+        width: 25%;
+        margin: 0 10% 0 10%;
+        display: inline-block;
+        vertical-align: top;
     }
 
     .detailsSection p{
@@ -423,10 +412,11 @@ form{
     }
 
     .skillsSection{
-        float: left;
-        margin: 0 5% 0 7%;
-        width:25%;
-    }
+        width: 25%;
+        margin: 0 10% 0 10%;
+        display: inline-block;
+        vertical-align: top;
+    } 
 
     .skillsSection p{
         margin: 0;
@@ -440,20 +430,23 @@ form{
         font-size: 30px;
     }
 
+    .aboutMeButtons{
+        width: 100%;
+        text-align: center;
+    }
+
     .aboutMeButtonStyle1{     
-        margin-left:37%;
-        margin-right:0%;
         padding: 25px;
         width:100px;
-        float:left;
+        margin: 0 5% 2% 0;
+        display: inline-block;
     }
     
     .aboutMeButtonStyle2{
-        margin-left: 10%;
-        margin-right:0%;
         padding: 25px;
         width:100px;
-        float:left;
+        margin: 0 0 2% 5%;
+        display: inline-block;
     }
 
     /* ################################################# End of About me Page #########################################################*/
