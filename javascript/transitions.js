@@ -25,17 +25,6 @@ function displayChange(oldPage, currentPage){
     }
 }
 
-function resetHeight(oldPage,currentPage){
-    let index = pages.indexOf(currentPage);
-
-    for(let  i = index + 1; i < pages.length; i++ ){
-        document.getElementById(pages[i]).style.animation = "slideIn 0.0s linear forwards";
-        document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
-        document.getElementById(texts[i]).style.animation = "fadeIn 0.0s linear forwards";
-    }
-
-}
-
 // Change static color of links
 function changeNavLinkStaticColor(currentLink){
     for(let i = 0; i < navLinks.length; i++ ){
@@ -60,16 +49,11 @@ function changeNavHoverColor(currentLink){
 function resetHeight(currentPage){
     let index = pages.indexOf(currentPage);
 
-    // for(let  i = 0; i < index; i++ ){
-    //     document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
-    // }
-
     for(let  i = index + 1; i < pages.length; i++ ){
         document.getElementById(pages[i]).style.animation = "slideIn 0.0s linear forwards";
-        document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
         document.getElementById(texts[i]).style.animation = "fadeIn 0.0s linear forwards";
     }
-
+    
 }
 
 // State of the site when loading in 
@@ -164,5 +148,8 @@ function changeEverything(index){
     setTimeout(function(){document.getElementById(currentPage).addEventListener("click", clickEvent);}, 1000); 
 
     resetHeight(currentPage);
+
+    
+    setTimeout(function(){document.getElementById(currentPage).style.animation = "breath 20.0s linear infinite";}, 1000); 
 
 }
