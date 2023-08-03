@@ -51,6 +51,7 @@ function resetHeight(currentPage){
 
     for(let  i = index + 1; i < pages.length; i++ ){
         document.getElementById(pages[i]).style.animation = "slideIn 0.0s linear forwards";
+        // document.getElementById(pages[i]).style.animation = "breath 20.0s linear infinite";
         document.getElementById(texts[i]).style.animation = "fadeIn 0.0s linear forwards";
     }
     
@@ -118,6 +119,9 @@ function changeEverything(index){
 
     oldPage = currentPage;
     oldText = currentText;
+
+    if(currentPage == pages[index])
+        return;
 
     currentPage = pages[index];
     currentText = texts[index];
