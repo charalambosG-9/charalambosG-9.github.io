@@ -3,6 +3,7 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html::-webkit-scrollbar{
@@ -45,16 +46,16 @@ main{
 
 .page h1{
     margin-top: 30%;
-    font-size: 35px;
     font-weight: bold;
+    font-size: 3rem;
 }
 
 .page p{
     margin-top: 20px;
     padding-left: 15%;
     padding-right: 15%;
-    font-size: 20px;
     font-weight: 400;
+    font-size: 2rem;
 }
 
 .page{
@@ -109,29 +110,30 @@ main{
 }
 
 .specPage h1{
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.specPage p{
+    font-size: 1rem;
 }
 
 .mainTitle{
     margin-top: 1.5em;
-    font-size: 5vw;
     font-weight: 600;
 }
 
 .mainParagraph{
     margin: 0 20% 5% 20%;
     text-align: center;
-    font-size: 2vmax;
 }
 
 .paragraphHeader{
-    font-size: 3vmax;
     margin-top: 1em;
 }
 
 .summaryParagraph{
     padding: 0 20%;
-    font-size: 2vmax;
 }
 
 /* ################################################# About me Page #########################################################*/
@@ -147,12 +149,11 @@ main{
 }
 
 .detailsSection h1{
-    font-size: 3vmax;
     text-align: center;
+    font-weight: bold;
 }
 
 .detailsSection p{
-    font-size: 2vmax;
     margin: 0 20% 5% 20%;
     text-align: center;
 }
@@ -160,7 +161,6 @@ main{
 .detailsInfo{
     all:revert;
     padding-left: 0;
-    font-size: 2vmax;
 }
 
 .detailsInfo strong{
@@ -183,12 +183,11 @@ main{
 }
 
 .skillsSection h1{
-    font-size: 3vmax;
     margin: 0.5em 0;
+    font-weight: bold;
 }
 
 .skillsSection p{
-    font-size: 2vmax;
     margin: 0 20% 5% 20%;
     text-align: center;
 }
@@ -201,29 +200,29 @@ main{
 
 .skillsSection li{
     margin: 0 0 25px 0;
-    font-size: 1.5em;
 }
 
 .skillsInfo strong{
     color: rgba(0, 0, 0, 0.63);
-    font-size: 20px;
 }
 
 .aboutMeButtons{
     width: 100%;
+    text-align: center;
 }
 
 /*Buttons in about me page*/
 .aboutMeButtonStyle1, .aboutMeButtonStyle2{
-    all: revert;
     color: white;
     text-decoration: none;
-    font-size: 1em;
     background-color: #11ABB0;
     display: block;
-    width:70%;
-    margin: 0 15% 5% 15%;
-    padding:1em;
+    width: 70%;
+    margin: 0 10% 5% 10%;
+    padding: 1em;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .aboutMeButtonStyle1:hover{
@@ -308,7 +307,6 @@ main{
     margin-top: 0%;
     text-align: left;
     margin-left: 5%;
-    font-size: 4vw;
 }
 
 form{
@@ -329,7 +327,6 @@ form{
     margin: 2% 0 1% 0;
     line-height: 2em;
     text-align: left;
-    font-size: 4vw;
 }
 
  /* sasasasas */
@@ -338,7 +335,6 @@ form{
     height: 10%;
     width: 40%;
     color: white;
-    font-size: 4vw;
     caret-color: rgb(252, 97, 97);
 }
 
@@ -354,7 +350,6 @@ form{
     width:80%;
     height:auto;
     color:white;
-    font-size: 4vw;
     caret-color: rgb(252, 97, 97);
 }
 
@@ -386,7 +381,7 @@ form{
         z-index: 100;
     }
     
-    nav ul {
+    nav ul{
         display: block;
         position: relative;
         top: 30%;
@@ -396,13 +391,12 @@ form{
     li a{
         display: block;
         padding: 5% 20%;
-        font-size: 1rem;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bold;
+        font-size: 20px;
     }
       
       /* Change the link color on hover */
-    li a:hover {
+    li a:hover{
         color: red;
     }
 
@@ -417,17 +411,25 @@ form{
 
     .page h1{
         margin-top: 10%;
-        font-size: 100px;
+        font-size: 3rem;
     }
 
     .page p{
         padding-left: 30%;
         padding-right: 30%;
-        font-size: 30px;
+        font-size: 2rem;
     }
 
     .specPage{ 
         width: 90%;
+    }
+
+    .specPage h1{
+        font-size: 3rem;
+    }
+
+    .specPage p{
+        font-size: 2rem;
     }
 
     /* ################################################# About me Page #########################################################*/
@@ -443,9 +445,13 @@ form{
         margin: 0;
     }
 
-    .detailsInfo{
-        font-size: 1.5vmax;
+    .detailsInfo strong, .skillsSection strong{
+       font-size: 35px;
     }
+
+    .detailsInfo span, .skillsSection span{
+        font-size: 25px;
+     }
 
     .skillsSection{
         width: 25%;
@@ -463,7 +469,7 @@ form{
     }
 
     .skillsInfo strong{
-        font-size: 30px;
+        
     }
 
     .aboutMeButtons{
@@ -471,18 +477,18 @@ form{
         text-align: center;
     }
 
-    .aboutMeButtonStyle1{     
+    .aboutMeButtonStyle1, .aboutMeButtonStyle2{
         padding: 25px;
-        width:100px;
-        margin: 0 5% 2% 0;
+        width: 150px;
         display: inline-block;
+    }
+
+    .aboutMeButtonStyle1{     
+        margin: 0 5% 2% 0;
     }
     
     .aboutMeButtonStyle2{
-        padding: 25px;
-        width:100px;
         margin: 0 0 2% 5%;
-        display: inline-block;
     }
 
     /* ################################################# End of About me Page #########################################################*/
@@ -514,7 +520,6 @@ form{
         margin: 2% 0 1% 0;
         line-height: 1em;
         text-align: left;
-        font-size: 2vw;
     }
 
     .formwrap p input[type=text],input[type=email]{
@@ -522,7 +527,6 @@ form{
         height: 10%;
         width: 40%;
         color: white;
-        font-size: 2vw;
         caret-color: rgb(252, 97, 97);
     }
 
@@ -532,7 +536,6 @@ form{
         width:80%;
         height:auto;
         color:white;
-        font-size: 0.5em;
         caret-color: rgb(252, 97, 97);
         
     }
@@ -559,7 +562,7 @@ form{
 
 
 ::placeholder{
-    font-size: 1em;
+    
 }
 
 .learnMoreHyperlink{
