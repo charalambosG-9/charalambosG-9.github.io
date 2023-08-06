@@ -45,9 +45,9 @@ main{
 }
 
 .page h1{
-    margin-top: 50%;
+    margin-top: 20vh;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 6vh;
 }
 
 .page p{
@@ -55,7 +55,7 @@ main{
     padding-left: 15%;
     padding-right: 15%;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 4vh;
 }
 
 .page{
