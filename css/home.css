@@ -45,7 +45,7 @@ main{
 }
 
 .page h1{
-    margin-top: 30%;
+    margin-top: 50%;
     font-weight: bold;
     font-size: 3rem;
 }
@@ -235,7 +235,7 @@ main{
     transition: 300ms;
 }
 
-/* ################################################# End of About me Page #########################################################*/
+/* ################################################# End of About me Page ######################################################### */
 
 .arrowToNextPage{
     visibility: hidden;
@@ -309,33 +309,38 @@ main{
     margin-left: 5%;
 }
 
+
+/* ################################################# Contact Me form ######################################################### */
+
+.contactMeTitle{
+    text-align: center;
+}
+
 form{
-    all: revert;
+    text-align: center;
     margin:1em;
 }
 
 .formwrap{
-    all: revert;
-    float: left;
-    margin-left: 5%;
     width: 100%;
     height: 100%;
 }
 
 .formwrap p{
-    all: revert;
     margin: 2% 0 1% 0;
-    line-height: 2em;
-    text-align: left;
+    padding: 0;
+    line-height: 1em;
+    text-align: center;
 }
 
- /* sasasasas */
 .formwrap p input[type=text],input[type=email]{
     background-color: rgb(26, 24, 27);
+    font-size: 0.75em;
     height: 10%;
-    width: 40%;
+    width: 80%;
     color: white;
     caret-color: rgb(252, 97, 97);
+    margin-top: 10px;
 }
 
 .formwrap p input[type=text]:focus ,input[type=email]:focus{
@@ -345,12 +350,13 @@ form{
 
 /* sasasasasa */
 .formwrap p textarea{
-    all:revert;
     background-color: rgb(26, 24, 27);
     width:80%;
     height:auto;
     color:white;
     caret-color: rgb(252, 97, 97);
+    font-size: 1em;
+    margin-top: 10px;
 }
 
 .formwrap p textarea:focus{
@@ -410,7 +416,7 @@ form{
     }
 
     .page h1{
-        margin-top: 10%;
+        margin-top: 20%;
         font-size: 3rem;
     }
 
@@ -515,29 +521,31 @@ form{
         margin-top: 5% !important;
     }
 
+    /* ################################################# Contact Me form ######################################################### */
+
+    .contactMeTitle{
+        text-align: left;
+    }
+
+    .formwrap{
+        margin-left: 5%;  
+    }
+
     .formwrap p{
-        all: revert;
-        margin: 2% 0 1% 0;
-        line-height: 1em;
+        padding: 0;
         text-align: left;
     }
 
     .formwrap p input[type=text],input[type=email]{
-        background-color: rgb(26, 24, 27);
         height: 10%;
         width: 40%;
-        color: white;
-        caret-color: rgb(252, 97, 97);
+        font-size: 1em;
     }
 
     .formwrap p textarea{
-        all:revert;
-        background-color: rgb(26, 24, 27);
         width:80%;
         height:auto;
-        color:white;
-        caret-color: rgb(252, 97, 97);
-        
+        color:white;  
     }
 }
 
@@ -560,14 +568,9 @@ form{
     text-shadow: 1px 1px 2px #427388; 
 }
 
-
-::placeholder{
-    
-}
-
 .learnMoreHyperlink{
     text-decoration: underline;
-    color:blue;
+    color:rgb(252, 97, 97);
 }
 
 #loading {
