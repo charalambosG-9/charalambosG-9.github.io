@@ -303,17 +303,12 @@ main{
     margin-bottom: 5%;
 }
 
-.contactMeTitle{
-    margin-top: 0%;
-    text-align: left;
-    margin-left: 5%;
-}
-
-
 /* ################################################# Contact Me form ######################################################### */
 
 .contactMeTitle{
+    margin-top: 5vh !important;
     text-align: center;
+    margin-left: 5%;
 }
 
 form{
@@ -517,14 +512,11 @@ form{
         margin-bottom: 5%;
     }
 
-    .contactMeTitle{
-        margin-top: 5% !important;
-    }
-
     /* ################################################# Contact Me form ######################################################### */
 
     .contactMeTitle{
         text-align: left;
+        margin-top: 5% !important;
     }
 
     .formwrap{
