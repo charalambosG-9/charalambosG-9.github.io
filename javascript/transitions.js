@@ -12,7 +12,7 @@ function timerForLinks(){
     setTimeout(function(){document.getElementById("homePageNavLink").setAttribute("onclick", "changeEverything(0)")}, 1000);
     setTimeout(function(){document.getElementById("aboutMeNavLink").setAttribute("onclick", "changeEverything(1)")}, 1000);
     setTimeout(function(){document.getElementById("myWorkNavLink").setAttribute("onclick", "changeEverything(2)")}, 1000);
-    setTimeout(function(){document.getElementById("servicesNavLink").setAttribute("onclick", "changeEverything(3)")}, 1000);
+    setTimeout(function(){document.getElementById("resumeNavLink").setAttribute("onclick", "changeEverything(3)")}, 1000);
     setTimeout(function(){document.getElementById("contactMeNavLink").setAttribute("onclick", "changeEverything(4)")}, 1000);   
 }
 
@@ -59,9 +59,9 @@ function resetHeight(currentPage){
 
 // State of the site when loading in 
 
-let pages = ['homePage', 'aboutMePage', 'myWorkPage', 'servicesPage','contactMePage'];
-let texts = ['homePageText', 'aboutMeText', 'myWorkText', 'servicesText','contactMeText'];
-let navLinks = ["homePageNavLink", "aboutMeNavLink", "myWorkNavLink", "servicesNavLink", "contactMeNavLink"]
+let pages = ['homePage', 'aboutMePage', 'myWorkPage', 'resumePage','contactMePage'];
+let texts = ['homePageText', 'aboutMeText', 'myWorkText', 'resumeText','contactMeText'];
+let navLinks = ["homePageNavLink", "aboutMeNavLink", "myWorkNavLink", "resumeNavLink", "contactMeNavLink"]
 
 let currentPage = "homePage";
 let currentText = "homePageText";
