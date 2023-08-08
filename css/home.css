@@ -368,15 +368,22 @@ form{
     height:3em;
 }
 
-
+/* ################################################# Timeline ######################################################### */
   
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
   color: #474e5d;
-  
+}
+
+.timeline h2{
+    font-size: 1.5rem;
+}
+
+.timeline p{
+    font-size: 1rem;
 }
 
 /* The actual timeline (the vertical ruler) */
