@@ -106,6 +106,8 @@ function onTouchMove(event) {
 
     const deltaY = event.touches[0].clientY - touchStartY;
     const threshold = 50; // Adjust this threshold based on your needs
+    // document.getElementById(currentPage).addEventListener('touchstart', onTouchStart);
+    // document.getElementById(currentPage).addEventListener('touchmove', onTouchStart);
 
     if (deltaY > threshold) {
         // Scrolling down
@@ -125,6 +127,7 @@ function onTouchMove(event) {
 }
 
 document.getElementById(currentPage).addEventListener('wheel', onScroll);
+document.getElementById(currentPage).addEventListener('touchstart', onTouchStart);
 document.getElementById(currentPage).addEventListener('touchmove', onTouchStart);
 
 
@@ -184,6 +187,7 @@ function changeEverything(index){
     timerForLinks();
       
     setTimeout(function(){document.getElementById(currentPage).addEventListener('wheel', onScroll);}, 1000); 
+    setTimeout(function(){document.getElementById(currentPage).addEventListener('touchstart', onTouchStart);}, 1000); 
     setTimeout(function(){document.getElementById(currentPage).addEventListener('touchmove', onTouchStart);}, 1000); 
 
     resetHeight(currentPage);
