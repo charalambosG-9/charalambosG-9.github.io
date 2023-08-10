@@ -106,21 +106,20 @@ function onTouchMove(event) {
 
     const deltaY = event.touches[0].clientY - touchStartY;
     const threshold = 50; // Adjust this threshold based on your needs
+    let index = pages.indexOf(currentPage);
     // document.getElementById(currentPage).addEventListener('touchstart', onTouchStart);
     // document.getElementById(currentPage).addEventListener('touchmove', onTouchStart);
 
     if (deltaY > threshold) {
         // Scrolling down
-        let index = pages.indexOf(currentPage);
-        if (index < pages.length - 1) {
-            changeEverything(index + 1);
+        if (index > 0) {
+            changeEverything(index - 1);
             touchHandled = true;
         }
     } else if (deltaY < -threshold) {
         // Scrolling up
-        let index = pages.indexOf(currentPage);
-        if (index > 0) {
-            changeEverything(index - 1);
+        if (index < pages.length - 1) {
+            changeEverything(index + 1);
             touchHandled = true;
         }
     }
@@ -128,7 +127,7 @@ function onTouchMove(event) {
 
 document.getElementById(currentPage).addEventListener('wheel', onScroll);
 document.getElementById(currentPage).addEventListener('touchstart', onTouchStart);
-document.getElementById(currentPage).addEventListener('touchmove', onTouchStart);
+document.getElementById(currentPage).addEventListener('touchmove', onTouchMove);
 
 
 // Loading screen
@@ -188,7 +187,7 @@ function changeEverything(index){
       
     setTimeout(function(){document.getElementById(currentPage).addEventListener('wheel', onScroll);}, 1000); 
     setTimeout(function(){document.getElementById(currentPage).addEventListener('touchstart', onTouchStart);}, 1000); 
-    setTimeout(function(){document.getElementById(currentPage).addEventListener('touchmove', onTouchStart);}, 1000); 
+    setTimeout(function(){document.getElementById(currentPage).addEventListener('touchmove', onTouchMove);}, 1000); 
 
     resetHeight(currentPage);
 
