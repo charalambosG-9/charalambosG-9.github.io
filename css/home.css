@@ -16,9 +16,9 @@ html::-webkit-scrollbar{
     color: white;
 }
 
-*::-moz-selection { /* Gecko Browsers */
+*::-moz-selection { /*Gecko Browsers */
     background: rgb(252, 97, 97); 
-    color: white; 
+    color: white;  
 }
 
 body{
@@ -62,7 +62,7 @@ main{
 
 .page{
     transform: scale(1.0);
-    overflow-y: hidden;
+    overflow-y: hidden; 
     overflow-x: hidden;
     z-index: -1;
     height: 100%;
@@ -280,29 +280,18 @@ main{
     user-select: none;
 }
 
-.col1{
-    float: left;
-    width:35%;
+.myWorkColumn{
+    /* float: left; */
+    /* text-align: center; */
+    /* width:35%;
     margin: 0 5% 2.5% 10%;
-    padding: 0%;
+    padding: 0%; */
 }
 
-.col1 img{
-    width: 100%;
+.myWorkColumn img{
+    /* width: 100%;
     height: 20vmax;
-    margin-bottom: 5%;
-}
-
-.col2{
-    float:left;
-    width:35%;
-    margin: 0 5% 2.5% 5%;
-}
-
-.col2 img{
-    width: 100%;
-    height: 20vmax;
-    margin-bottom: 5%;
+    margin-bottom: 5%; */
 }
 
 /* ################################################# Contact Me form ######################################################### */
@@ -627,23 +616,17 @@ form{
 
     /* ################################################# End of About me Page #########################################################*/
 
-    .col1{
+    /* .myWorkColumn{
         float: left;
         width:35%;
         margin: 0 5% 2.5% 5%;
     }
 
-    .col1 img{
+    .myWorkColumn img{
         width: 100%;
         height: 30vmax;
         margin-bottom: 5%;
-    }
-
-    .col2 img{
-        width: 100%;
-        height: 30vmax;
-        margin-bottom: 5%;
-    }
+    } */
 
     /* ################################################# Contact Me form ######################################################### */
 

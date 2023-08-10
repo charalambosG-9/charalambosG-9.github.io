@@ -74,25 +74,27 @@ changeNavLinkStaticColor("homePageNavLink");
 
 changeNavHoverColor("homePageNavLink")
 
-function clickEvent(event) {
-
+function onScroll() {
+    // Add your code for scroll action here
+    const deltaY = event.deltaY;
     let index = pages.indexOf(currentPage);
-   
-    if (document.documentElement.clientWidth < 95000){
-        if (event.clientY > (document.documentElement.clientHeight - document.documentElement.clientHeight/5)){
-            console.log("here");
-            if(index < pages.length - 1)
-                changeEverything(index+1);
-        }
+    document.getElementById(currentPage).removeEventListener('wheel', onScroll);
 
-        if (event.clientY < document.documentElement.clientHeight/5){
-            if(index > 0) 
-                changeEverything(index-1);
-        }
+    if (deltaY > 0) {
+        // Scrolling down
+        if(index < pages.length - 1)
+                changeEverything(index+1);
+    }else{
+        // Scrolling up
+        if(index > 0) 
+            changeEverything(index-1);
+        
     }
+
 }
 
-document.getElementById("homePage").addEventListener("click", clickEvent);
+document.getElementById(currentPage).addEventListener('wheel', onScroll);
+
 
 // Loading screen
 onReady(function () {
@@ -149,7 +151,7 @@ function changeEverything(index){
 
     timerForLinks();
       
-    setTimeout(function(){document.getElementById(currentPage).addEventListener("click", clickEvent);}, 1000); 
+    setTimeout(function(){document.getElementById(currentPage).addEventListener('wheel', onScroll);}, 1000); 
 
     resetHeight(currentPage);
 
