@@ -73,6 +73,12 @@ main{
     background-position: center center; 
     background-attachment: fixed;
     text-align: center; 
+     color: #ffffff;
+}
+
+#aboutMePage{
+    background-image: url("../images/backgroundCode.png");
+    /* background-image: url("../images/backgroundPicture.png"); */
 }
 
 #homePage{
@@ -244,10 +250,10 @@ main{
 .image-container {
     position: relative;
     overflow: hidden;
-    width: 300px;
-    height: 200px;
+    width: 80%;
+    height: auto;
     display:  inline-block;
-    margin: 0 2em 2em 0;
+    margin: 10% 2em;
 }
 
 .image-container img {
@@ -658,7 +664,12 @@ form{
 
     /* ################################################# My Work Page #########################################################*/
 
-    
+    .image-container {
+        width: 400px;
+        height: 400px;
+        margin: 0 2em 2em 0;
+    }
+
     /* ################################################# Contact Me form ######################################################### */
 
     .contactMeTitle{
