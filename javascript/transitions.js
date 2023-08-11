@@ -78,7 +78,7 @@ changeNavLinkStaticColor("homePageNavLink");
 changeNavHoverColor("homePageNavLink")
 
 function onScroll() {
-    // Add your code for scroll action here
+    console.log("scrolling");
     const deltaY = event.deltaY;
     let index = pages.indexOf(currentPage);
     document.getElementById(currentPage).removeEventListener('wheel', onScroll);
@@ -105,10 +105,8 @@ function onTouchMove(event) {
     if (touchHandled) return;
 
     const deltaY = event.touches[0].clientY - touchStartY;
-    const threshold = 50; // Adjust this threshold based on your needs
+    const threshold = 50; 
     let index = pages.indexOf(currentPage);
-    // document.getElementById(currentPage).addEventListener('touchstart', onTouchStart);
-    // document.getElementById(currentPage).addEventListener('touchmove', onTouchStart);
 
     if (deltaY > threshold) {
         // Scrolling down
