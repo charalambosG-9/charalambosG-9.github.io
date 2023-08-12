@@ -73,16 +73,27 @@ main{
     background-position: center center; 
     background-attachment: fixed;
     text-align: center; 
-     color: #ffffff;
-}
-
-#aboutMePage{
-    background-image: url("../images/backgroundCode.png");
-    /* background-image: url("../images/backgroundPicture.png"); */
+    color: #ffffff;
 }
 
 #homePage{
-    background-image: url("../images/backgroundPicture.png");
+    background-image: url("../images/image3.jpg");
+}
+
+#aboutMePage{
+    background-image: url("../images/image.jpg");
+}
+
+#myWorkPage{
+    background-image: url("../images/myWorkBackgroundMobile.jpg");
+}
+
+#resumePage{
+    background-image: url("../images/resumeBackgroundMobile.jpg");
+}
+
+#contactMePage{
+    background-image: url("../images/image2.jpg");
 }
 
 .breathAnimation{
@@ -540,6 +551,14 @@ form{
 }
 
 @media screen and (min-width:950px){
+
+    #myWorkPage{
+        background-image: url("../images/myWorkBackground.jpg");
+    }
+
+    #resumePage{
+        background-image: url("../images/resumeBackground.jpg");
+    }
 
     html::-webkit-scrollbar:not(.specPage){
         display: none;
