@@ -188,7 +188,6 @@ main{
 }
 
 .detailsInfo span{
-    color:rgba(0, 4, 7, 0.582); 
     position: relative;
 }
 
@@ -289,9 +288,15 @@ main{
   transition: opacity 0.3s;
 }
 
+.overlay h1 {
+    color: #fff;
+    font-size: 24px !important;
+    margin-bottom: 10px;
+  }
+
 .overlay p {
   color: #fff;
-  font-size: 18px;
+  font-size: 22px !important;
   margin-bottom: 10px;
 }
 
@@ -730,7 +735,7 @@ form{
 
     .aboutMeButtonStyle1, .aboutMeButtonStyle2{
         padding: 25px;
-        width: 150px;
+        width: 200px;
         display: inline-block;
     }
 
