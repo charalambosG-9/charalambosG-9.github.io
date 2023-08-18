@@ -67,7 +67,6 @@ main{
     z-index: -1;
     height: 100%;
     width: 100%;
-    background-image: url("http://wallpapercave.com/wp/LXR5gFx.png");
     animation: breath 20s linear infinite;  
     background-repeat: no-repeat; 
     background-position: center center; 
@@ -752,7 +751,7 @@ form{
     /* ################################################# My Work Page #########################################################*/
 
     .image-container {
-        width: 400px;
+        width: 500px;
         height: 400px;
         margin: 0 2em 2em 0;
     }
