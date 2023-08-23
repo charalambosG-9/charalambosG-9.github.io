@@ -233,7 +233,7 @@ main{
     color: white;
     text-decoration: none;
     background-color: #11ABB0;
-    display: block;
+    display: inline-block;
     width: 70%;
     margin: 0 10% 5% 10%;
     padding: 1em;
@@ -726,11 +726,6 @@ form{
 
     .skillsSection ul{
         margin: 20px 0 50px 0;
-    }
-
-    .aboutMeButtons{
-        width: 100%;
-        text-align: center;
     }
 
     .aboutMeButtonStyle1, .aboutMeButtonStyle2{
