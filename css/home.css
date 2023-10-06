@@ -367,6 +367,7 @@ main{
     background-position: center center; 
     background-attachment: fixed;
     text-align: center; 
+    /* width: 110%; */
 }
 
 .contactMeDetails {
@@ -374,7 +375,7 @@ main{
 }
 
 .contactMeEmail, .contactMeLinkedin{ 
-    margin: 5em;
+    margin: 3em;
     font-size: 18px;
 }
 
@@ -741,6 +742,11 @@ main{
 
     .contactMeDetails{
         display: flex;
+    }
+
+    .contactMeEmail, .contactMeLinkedin{ 
+        margin: 5em;
+        font-size: 18px;
     }
 
 }
