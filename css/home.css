@@ -206,7 +206,7 @@ main{
 }
 
 .skillsSection p{
-    margin: 0 20% 5% 20%;
+    margin: 0 15% 5% 15%;
     text-align: center;
 }
 
@@ -376,6 +376,7 @@ main{
 
 .contactMeDetails {
     justify-content: center;
+    font-size: 24px;
 }
 
 .contactMeEmail, .contactMeLinkedin{ 
@@ -391,11 +392,6 @@ main{
 .contactMeLinkedin i{
     font-size: 4.2rem;
 }
-
-.contactMeLinkedinHyperlink{
-    color : red;
-}
-
 
 /* ################################################# Timeline ######################################################### */
   
