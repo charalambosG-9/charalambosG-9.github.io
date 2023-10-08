@@ -46,6 +46,7 @@ function changeNavHoverColor(currentLink){
     }
 }
 
+// Reset the height of all pages after the current page
 function resetHeight(currentPage){
     let index = pages.indexOf(currentPage);
 
@@ -56,28 +57,8 @@ function resetHeight(currentPage){
     
 }
 
-// State of the site when loading in 
-
-let pages = ['homePage', 'aboutMePage', 'myWorkPage', 'resumePage','contactMePage'];
-let texts = ['homePageText', 'aboutMeText', 'myWorkText', 'resumeText','contactMeText'];
-let navLinks = ["homePageNavLink", "aboutMeNavLink", "myWorkNavLink", "resumeNavLink", "contactMeNavLink"]
-
-let currentPage = "homePage";
-let currentText = "homePageText";
-let oldPage = "";
-let oldText = "";
-
-let touchStartY = 0;
-let touchHandled = false;
-
-displayChange(oldPage, currentPage)
-
-changeNavLinkStaticColor("homePageNavLink");
-
-changeNavHoverColor("homePageNavLink")
-
+// Trigger event on mouse scroll
 function onScroll() {
-    console.log("scrolling");
     const deltaY = event.deltaY;
     let index = pages.indexOf(currentPage);
     document.getElementById(currentPage).removeEventListener('wheel', onScroll);
@@ -94,6 +75,8 @@ function onScroll() {
     }
 
 }
+
+// Functions for touch events on mobile
 
 function onTouchStart(event) {
     touchStartY = event.touches[0].clientY;
@@ -122,12 +105,33 @@ function onTouchMove(event) {
     }
 }
 
+// State of the site when loading in 
+
+let pages = ['homePage', 'aboutMePage', 'myWorkPage', 'resumePage','contactMePage'];
+let texts = ['homePageText', 'aboutMeText', 'myWorkText', 'resumeText','contactMeText'];
+let navLinks = ["homePageNavLink", "aboutMeNavLink", "myWorkNavLink", "resumeNavLink", "contactMeNavLink"]
+
+let currentPage = "homePage";
+let currentText = "homePageText";
+let oldPage = "";
+let oldText = "";
+
+// Touch events on mobile
+let touchStartY = 0;
+let touchHandled = false;
+
+displayChange(oldPage, currentPage)
+
+changeNavLinkStaticColor("homePageNavLink");
+
+changeNavHoverColor("homePageNavLink")
+
 document.getElementById(currentPage).addEventListener('wheel', onScroll);
 document.getElementById(currentPage).addEventListener('touchstart', onTouchStart);
 document.getElementById(currentPage).addEventListener('touchmove', onTouchMove);
 
 
-// Loading screen
+// Functions for loading screen
 onReady(function () {
     show('main', true);
     show('loading', false);
@@ -148,6 +152,7 @@ function show(id, value) {
     document.getElementById(id).style.display = value ? 'block' : 'none';
 }
 
+// Main function for changing pages
 function changeEverything(index){
 
     oldPage = currentPage;
