@@ -459,7 +459,7 @@ main{
 .arrowToNextPage img{
     visibility: visible;
     position: fixed;
-    bottom: 0%;
+    bottom: 1%;
     right: 1%;
     height: 4rem;
     width: auto;
