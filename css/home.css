@@ -13,12 +13,12 @@ html::-webkit-scrollbar{
 }
 
 *::selection { /* WebKit/Blink Browsers */
-    background: red; 
+    background: #FFAB00; 
     color: white;
 }
 
 *::-moz-selection { /*Gecko Browsers */
-    background: red; 
+    background: #FFAB00; 
     color: white;  
 }
 
@@ -110,7 +110,7 @@ main{
 }
 
 .mediaIcons a:hover{
-    color: red;
+    color: #FFAB00;
 }
 
 .specPage{ 
@@ -120,7 +120,7 @@ main{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.712);
     padding: 0;
-    color:white;
+    color: white;
     text-align: center;
 }
 
@@ -356,7 +356,7 @@ main{
     height: 25px;
     right: -17px;
     background-color: white;
-    border: 4px solid red;
+    border: 4px solid #FFAB00;
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -548,7 +548,7 @@ main{
 
 .learnMoreHyperlink{
     text-decoration: underline;
-    color:red;
+    color:#FFAB00;
 }
 
 #loading {
@@ -566,7 +566,7 @@ main{
 }
 
 .currentPage{
-    color: red
+    color: #FFAB00
 }
 
 .differentPage{
@@ -575,7 +575,7 @@ main{
 }
 
 .differentPage :hover{
-    color:red
+    color:#FFAB00
 }
 
 @media screen and (min-width:950px){
@@ -629,7 +629,7 @@ main{
       
       /* Change the link color on hover */
     li a:hover{
-        color: red;
+        color: #FFAB00;
     }
 
     main{

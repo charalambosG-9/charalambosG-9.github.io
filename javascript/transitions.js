@@ -29,7 +29,7 @@ function displayChange(oldPage, currentPage){
 function changeNavLinkStaticColor(currentLink){
     for(let i = 0; i < navLinks.length; i++ ){
         if (navLinks[i] == currentLink)
-            document.getElementById(navLinks[i]).style.color = "red";
+            document.getElementById(navLinks[i]).style.color = "#FFAB00";
         else
             document.getElementById(navLinks[i]).style.color = "white";
     }
@@ -39,10 +39,10 @@ function changeNavLinkStaticColor(currentLink){
 function changeNavHoverColor(currentLink){
     for(let i = 0; i < navLinks.length; i++ ){
         if (navLinks[i] != currentLink){
-            document.getElementById(navLinks[i]).addEventListener('mouseenter', () => document.getElementById(navLinks[i]).style.color = 'red');
+            document.getElementById(navLinks[i]).addEventListener('mouseenter', () => document.getElementById(navLinks[i]).style.color = '#FFAB00');
             document.getElementById(navLinks[i]).addEventListener('mouseleave', () => document.getElementById(navLinks[i]).style.color = 'white');
         }else
-            document.getElementById(navLinks[i]).addEventListener('mouseleave', () => document.getElementById(navLinks[i]).style.color = 'red');
+            document.getElementById(navLinks[i]).addEventListener('mouseleave', () => document.getElementById(navLinks[i]).style.color = '#FFAB00');
     }
 }
 
